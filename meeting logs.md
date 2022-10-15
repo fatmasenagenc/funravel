@@ -17,5 +17,5 @@ filled out the project form
 
 ### 10.10.2022
 
-meeting with innovation expert - Mustafa Sakalsız
+meeting with innovation expert - Mustafa Sakalsız  
 decided to continue with event-based travel application 
