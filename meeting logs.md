@@ -14,3 +14,8 @@ mustafa and sena -introduction and description
 decided the name of the app  
 opened a github repo and created a website  
 filled out the project form  
+
+### 10.10.2022
+
+meeting with innovation expert - Mustafa Sakalsız  
+decided to continue with event-based travel application 
