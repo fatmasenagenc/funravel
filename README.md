@@ -1,6 +1,8 @@
 # Funravel
 
-Planning a trip for an event outside your city can be really time consuming and hard. Funravel is a mobile app which suggests users events and calculates total cost of their events which is further away from where they live. The app redirects users to the booking websites after generating a travel plan for the event. Users can give information about their favorite events, favorite singers etc. The application would give notifications about incoming events they would like. Users can create posts about their travels and activities to share them with other users. To finance the application, in-app advertisements and booking, ticket website commissions are used.  
+Unravel, travel and have fun!
+
+Planning a trip for an event outside your city can be time-consuming and hard. Funravel wants to optimise this planning time spent, by suggesting to users a travel plan for an event and calculating the total cost of their travel, including accommodation and transportation. Essentially, Funravel is an event-based travel optimization mobile application. Funravel also aims to connect users with each other who do not want to attend these events all by themselves. Overall, it wants to reduce time spent on the planning of far-away events as much as possible with the possibility of group planning.  
 
 ## Group Members  
 
