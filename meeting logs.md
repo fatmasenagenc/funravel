@@ -18,14 +18,14 @@ filled out the project form
 ### 10.10.2022 group meeting
 
 meeting with innovation expert - Mustafa Sakalsız  
-decided to continue with event-based travel application 
+decided to continue with event-based travel application  
 
 ### 16.10.2022 group meeting
 
-changed and improved some of the functionalities based on the changed topic 
-talked about what can we implement about the group travel idea 
---decided to have group chats for individuals who wants to go to the same concert 
-constraint part is also assigned to gülin and öykü 
+changed and improved some of the functionalities based on the changed topic  
+talked about what can we implement about the group travel idea  
+--decided to have group chats for individuals who wants to go to the same concert  
+constraint part is also assigned to gülin and öykü  
 
 ### 21.10.2022 group meeting
 
