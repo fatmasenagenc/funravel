@@ -39,6 +39,9 @@ Travel app
 
 mailed to the instructors about our ideas
 
+### 22.09.2022 group meeting
+talked with Fazlı hoca and decided to continue with project together
+
 ### 30.09.2022 1st group meeting with course instructors
 
 
