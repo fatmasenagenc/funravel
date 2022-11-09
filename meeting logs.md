@@ -1,5 +1,47 @@
 # Meeting Logs
 
+### 20.09.2022 group meeting
+Brainstorm about the ideas we have:  
+
+Slack for families    
+  Main features:   
+- Parents can add notes/ todo / tasks and assign them to each of their children. Children can check the tasks they are assigned to.  
+- Families can chat, call, video-call with each others through the app.  
+- Parents can track their childrens’ locations.  
+
+Shopping app   
+  Main features:  
+- Users post their shopping list, shop’s name and location and the available employee gets it for them.  
+- Users and  delivery employee  can chat/ call at anytime while they are shopping to keep each other updated  
+- Users can essentially order anything from anywhere in their city with varying fees and delivery employees will have the option to accept the request  
+
+Calming app    
+  Main features:  
+- Users can create a space to express emotions with other users  
+- Journal section where users write everyday about their day  
+- Breathing exercises  
+- Users can chat with each others anonymously and talk about their feelings  
+
+Travel app   
+  Main features:  
+- Turkey only version  
+- Euroepe schengen version  
+- Recommendation according to user profile using Machine learning.  
+- User budget - climate - things wanted to be done  
+- Transportation type can be chosen plane bus train  
+- Suprise package app or recommendation app?  
+- Monthly subscription system which gives you a holiday  
+- App Can help to save a budget for the coming trip.  
+- Group holiday to meet with others and go on holiday together?  
+- Group can be chosen with gender, hobbies , age  
+- Tripadvisor rapid api etc can be used  
+- Data Mining  
+
+mailed to the instructors about our ideas
+
+### 30.09.2022 1st group meeting with course instructors
+
+
 ### 04.10.2022 group meeting
 
 determined the functinalities and non-functional requirements  
