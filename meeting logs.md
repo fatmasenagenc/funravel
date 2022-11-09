@@ -40,10 +40,17 @@ Travel app
 mailed to the instructors about our ideas
 
 ### 22.09.2022 group meeting
+
 talked with Fazlı hoca and decided to continue with project together
 
 ### 30.09.2022 1st group meeting with course instructors
 
+ideas:  
+redirect to the payment process  
+focus on finding competitive proices  
+do a mobile application  
+top destinations for travel  
+suggestions for user  
 
 ### 04.10.2022 group meeting
 
