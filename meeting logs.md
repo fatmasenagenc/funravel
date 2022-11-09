@@ -53,6 +53,11 @@ decided on some filter choices for the travel plan suggestion:
 discussed about some objects to use: provider class  
 add "edit functionality" to suggested travel plan package for hotel and transportation if user doesn't like any of the suggestions  
 
+### 09.11.2022 2nd group meeting with course instructors
+
+on demo-> try to show concerts -use web crawler- and firebase connections  
+see if we can fetch data of concerts, hotels and transportation in this semester  
+decided to set another meeting 2/3 weeks before demo  
 
 
 
