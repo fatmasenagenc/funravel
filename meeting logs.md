@@ -33,7 +33,25 @@ started to UI design and designed main pages on figma
 
 ### 01.11.2022 group meeting
 
-set the first progress meeting with course instructors on 09.11.2022
+set the progress meeting date with course instructors on 09.11.2022
+
+### 04.11.2022 group meeting
+
+divided the work for the analysis report:  
+scenarios - hissam, öykü, gülin  
+use case model -öykü, gülin  
+object and class model -öykü, mustafa, hissam  
+dynamic models (activity, sequence, state) - sena, gülin, mustafa  
+user interface -sena, hissam  
+
+### 08.11.2022 group meeting
+
+decided on some filter choices for the travel plan suggestion:  
+  -best price option for hotel and transportation  
+  -shortest distance between hotel and concert  
+  -minimum transfer for flight  
+discussed about some objects to use: provider class  
+add "edit functionality" to suggested travel plan package for hotel and transportation if user doesn't like any of the suggestions  
 
 
 
