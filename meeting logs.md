@@ -111,6 +111,9 @@ on demo-> try to show concerts -use web crawler- and firebase connections
 see if we can fetch data of concerts, hotels and transportation in this semester  
 decided to set another meeting 2/3 weeks before demo  
 
+### 23.11.2022 group meeting
+decided to learn about API's, fetching data, flutter-dart  
+
 
 
 
