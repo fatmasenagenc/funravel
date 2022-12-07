@@ -114,6 +114,12 @@ decided to set another meeting 2/3 weeks before demo
 ### 23.11.2022 group meeting
 decided to learn about API's, fetching data, flutter-dart  
 
+### 07.12.2022 group meeting
+SeatGeek API is chosen to concert events data.
+Hissam and Mustafa - UI of concert pages, fetch data
+Gülin and Sena - class and object creation
+Öykü - sign in, sign up, login pages
+
 
 
 
