@@ -18,7 +18,7 @@ class CardWidget extends StatelessWidget {
           child: Container(
               padding: EdgeInsets.only(right: 10, left: 10),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment:  MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
