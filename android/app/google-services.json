@@ -4,6 +4,7 @@
     "project_id": "furnacel",
     "storage_bucket": "furnacel.appspot.com"
   },
+
   "client": [
     {
       "client_info": {
@@ -35,5 +36,6 @@
       }
     }
   ],
+
   "configuration_version": "1"
 }
