@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../contants.dart';
+import '../constants/contants.dart';
 
 class CardWidget extends StatelessWidget {
   const CardWidget({Key? key}) : super(key: key);
@@ -13,7 +13,8 @@ class CardWidget extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image:  AssetImage("Assets/rihanna.png", ), fit: BoxFit.cover),
+                  image:  AssetImage("Assets/images/rihanna.png", ), fit: BoxFit.cover),
+            // borderRadius: BorderRadius.circular(20)
           ),
           child: Container(
               padding: EdgeInsets.only(right: 10, left: 10),

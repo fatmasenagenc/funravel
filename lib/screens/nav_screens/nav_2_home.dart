@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../contants.dart';
+import '../../constants/contants.dart';
 import '../../widgets/card_widget.dart';
 
 
@@ -17,13 +17,15 @@ class NavHomeScreen extends StatefulWidget {
 class _NavHomeScreenState extends State<NavHomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return  Scaffold(
         backgroundColor: kPrimaryColor,
         body: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
+          // physics: NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.only(right: 10, left: 10),
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+
             children: [
               SizedBox(
                 height: 70,
@@ -31,12 +33,12 @@ class _NavHomeScreenState extends State<NavHomeScreen> {
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.only(right: 20, left: 10),
-                margin: EdgeInsets.symmetric(horizontal: 20),
+                margin: EdgeInsets.symmetric(horizontal: 10),
                 color: kSecondaryColor,
                 child: TextField(
                   controller: TextEditingController(),
+                  style: TextStyle( color: kPrimaryDarkenedColor, fontWeight: FontWeight.bold),
                   cursorColor: Colors.black,
-                  autofocus: true,
                   onChanged: (input) {
                     print("changed $input");
                   },
@@ -55,7 +57,8 @@ class _NavHomeScreenState extends State<NavHomeScreen> {
                           width: 2,
                           color: Colors.white.withOpacity(0)), //<-- SEE HERE
                     ),
-                    hintText: "Artist",
+                    hintText: "Find Your Artist",
+                    hintStyle: TextStyle( color: kPrimaryDarkenedColor.withOpacity(0.5), fontWeight: FontWeight.bold)
                   ),
                 ),
               ),
@@ -66,7 +69,8 @@ class _NavHomeScreenState extends State<NavHomeScreen> {
                 width: double.infinity,
                 padding:
                 EdgeInsets.only(top: 15, bottom: 15, right: 15, left: 15),
-                margin: EdgeInsets.only(right: 20, left: 20),
+                margin: EdgeInsets.symmetric(horizontal: 10),
+
                 color: kSecondaryColor,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -78,19 +82,17 @@ class _NavHomeScreenState extends State<NavHomeScreen> {
                           fontSize: 15,
                           fontWeight: FontWeight.bold),
                     ),
-                    SvgPicture.asset("Assets/filter.svg")
+                    SvgPicture.asset("Assets/icons/filter.svg", width: 25,)
                   ],
                 ),
               ),
-
-              SingleChildScrollView(
-                  padding: EdgeInsets.only(right: 10, left: 10),
-                  child: GridView.count(
+              GridView.count(
                       shrinkWrap: true,
                       crossAxisCount: 2,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                       childAspectRatio: 1 / 1.3,
+                  physics: NeverScrollableScrollPhysics(),
 
                       children: [
                         CardWidget(),
@@ -105,13 +107,10 @@ class _NavHomeScreenState extends State<NavHomeScreen> {
                         CardWidget(),
                         CardWidget(),
                         CardWidget(),
-
                       ]),
-                ),
             ],
           ),
         ),
-      ),
     );
   }
 }
