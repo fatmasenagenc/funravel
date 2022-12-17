@@ -15,10 +15,13 @@ class Funravel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: kDataThemeDark,
+      //ThemeData(
+        //primarySwatch: Colors.blue,
+        //visualDensity: VisualDensity.adaptivePlatformDensity,
+      //),
+      themeMode: ThemeMode.dark,
       home: LoginPage(),
     );
   }
