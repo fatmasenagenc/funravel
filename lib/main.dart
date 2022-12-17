@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:funravel_v0/screens/nav_screens/nav_1_home.dart';
-import 'package:funravel_v0/screens/nav_screens/login.dart';
-import 'package:funravel_v0/screens/nav_screens/sign_up.dart';
+import 'package:funravel_v0/screens/login.dart';
+import 'package:funravel_v0/screens/sign_up.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'constants/app_theme.dart';

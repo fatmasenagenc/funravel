@@ -41,6 +41,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   firebase_auth: ^3.10.0
+  firebase_auth_web: 4.5.0
   firebase_core: ^1.20.0
   cloud_firestore: ^3.3.0
   firebase_core_platform_interface: 4.5.1
@@ -54,7 +55,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_svg: ^1.1.6
   http: ^0.13.5
-  intl: ^0.18.0
+  intl: ^0.17.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
