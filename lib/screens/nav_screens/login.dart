@@ -21,7 +21,7 @@ class _LoginPage extends State<LoginPage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: kPrimaryDarkenedColor,
+        backgroundColor: kPrimaryColor,
         body: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -29,27 +29,15 @@ class _LoginPage extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "Funravel",
                   style: TextStyle(
                       fontSize: 40,
-                      color: Colors.white.withOpacity(.75),
+                      color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 50),
-                Container(
-                height: size.height * .5,
-                width: size.width * .85,
-                decoration: BoxDecoration(
-                    color: kPrimaryColor.withOpacity(.75),
-                    borderRadius: const BorderRadius.all(Radius.circular(20)),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(.75),
-                          blurRadius: 10,
-                          spreadRadius: 2)
-                    ]),
-                child: Padding(
+                Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Center(
                     child: Column(
@@ -126,18 +114,26 @@ class _LoginPage extends State<LoginPage> {
                             });
                           },
                           child: Container(
+                            width: 150,
                             padding: const EdgeInsets.symmetric(vertical: 5),
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.white, width: 2),
-                                borderRadius: BorderRadius.all(Radius.circular(30))),
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                  color: Colors.purple.withOpacity(.75),
+                                    blurRadius: 5,
+                                    spreadRadius: 2)
+                                  ]),
                             child: const Padding(
                               padding: EdgeInsets.all(5.0),
                               child: Center(
                                   child: Text(
                                     "Login",
                                     style: TextStyle(
-                                      color: Colors.white,
+                                      color: kPrimaryDarkenedColor,
                                       fontSize: 20,
+                                      fontWeight: FontWeight.bold
                                     ),
                                   )),
                             ),
@@ -167,7 +163,6 @@ class _LoginPage extends State<LoginPage> {
                     ),
                   ),
                 ),
-              ),
             ]
           ),
           ),
