@@ -1,9 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:funravel_v0/screens/nav_screens/nav_1_home.dart';
+import 'package:funravel_v0/screens/nav_screens/login.dart';
+import 'package:funravel_v0/screens/nav_screens/sign_up.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'contants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-void main() {
-  runApp(const NavHomeScreen());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(Funravel());
+}
+
+class Funravel extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: LoginPage(),
+    );
+  }
 }
