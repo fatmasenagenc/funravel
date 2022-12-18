@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:funravel_v0/screens/login.dart';
+import 'package:flutter/material.dart';
 
 class AuthService{
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -10,7 +12,7 @@ class AuthService{
     return user.user;
   }
 
-  signOut() async {
+  Future signOut() async {
     return await _auth.signOut();
   }
 
