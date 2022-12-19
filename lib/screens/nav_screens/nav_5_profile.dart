@@ -14,9 +14,9 @@ class NavProfile extends StatefulWidget {
 }
 
 class _NavProfileState extends State<NavProfile> {
-
   String? userName = "";
   String? userPic = "";
+
   AuthService _authService = AuthService();
 
   Future _getDataFromDatabase() async

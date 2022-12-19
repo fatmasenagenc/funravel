@@ -47,6 +47,7 @@ dev_dependencies:
   firebase_core: ^1.20.0
   cloud_firestore: ^3.3.0
   firebase_core_platform_interface: 4.5.1
+  shared_preferences: ^2.0.15
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
