@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:funravel_v0/screens/create_review.dart';
 import 'package:funravel_v0/screens/login.dart';
 import 'package:funravel_v0/service/auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -121,16 +122,22 @@ class _NavProfileState extends State<NavProfile> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: kPrimaryDarkenedColor)),
               ),
               SizedBox(height: 50, width:30,),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: kSecondaryColor,
-                  fixedSize: const Size(250, 50),
+              ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: kSecondaryColor,
+                    fixedSize: const Size(250, 50),
+                  ),
+                  icon: Icon(Icons.comment, size: 28, color: Colors.black),
+                  label: Text('Create a Review',
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: kPrimaryDarkenedColor)
+                  ),
+                  onPressed: () =>
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CreateReview())),
+                      )
 
-                ),
-                onPressed: () =>
-                {}, child: Text('Create a Review Post',
-                  style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold, color: kPrimaryDarkenedColor)),
-              ),
+
           ]
         ),
     ),
