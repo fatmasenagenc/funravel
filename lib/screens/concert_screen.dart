@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:funravel_v0/constants/contants.dart';
 import 'package:funravel_v0/models/concert_model.dart';
 import 'package:funravel_v0/widgets/card_widget.dart';
+import 'package:funravel_v0/screens/suggested_plan_screen.dart';
 
 class ConcertScreen extends StatefulWidget {
   final Concert concert;
@@ -86,8 +87,13 @@ class _ConcertScreenState extends State<ConcertScreen> {
 
               children: [
                 SizedBox(height: 20,),
-                buildCustomButton(title: "Buy Tickets", function: (){}, sideWidget: Icon(Icons.link, color: kPrimaryDarkenedColor,)),
-                SizedBox(height: 10,),
+                buildCustomButton(title: "Buy Tickets", function: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SuggestPlan()));
+
+                }, sideWidget: Icon(Icons.link, color: kPrimaryDarkenedColor,)),
+                SizedBox(height: 20,),
                 buildCustomButton(title: "Create Group Invitation", function: (){}, ),
 
                 SizedBox(height: 20,),
@@ -104,7 +110,6 @@ class _ConcertScreenState extends State<ConcertScreen> {
     );
   }
 }
-
 
 buildCustomButton({ String? title, Function? function, Widget? sideWidget}){
   return InkWell(
