@@ -19,8 +19,8 @@ class _CreateGroupInv extends State<CreateGroupInv> {
         body:
         Padding(
             padding: const EdgeInsets.only(top: 70, left: 10, right:10),
-    child: SingleChildScrollView(
-    scrollDirection: Axis.vertical,
+          child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Column(
             children:[
               Container(
