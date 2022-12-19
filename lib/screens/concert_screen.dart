@@ -88,17 +88,19 @@ class _ConcertScreenState extends State<ConcertScreen> {
               children: [
                 SizedBox(height: 20,),
                 buildCustomButton(title: "Buy Tickets", function: (){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SuggestPlan()));
-
                 }, sideWidget: Icon(Icons.link, color: kPrimaryDarkenedColor,)),
                 SizedBox(height: 20,),
                 buildCustomButton(title: "Create Group Invitation", function: (){}, ),
 
                 SizedBox(height: 20,),
 
-                buildCustomButton(title: "Suggest A Travel Plan", function: (){}, ),
+                buildCustomButton(title: "Suggest A Travel Plan", function: (){
+
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SuggestPlan()));
+
+                }, ),
                 SizedBox(height: 2000,),
 
               ],
