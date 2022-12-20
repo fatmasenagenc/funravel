@@ -6,6 +6,7 @@ import 'package:funravel_v0/screens/concert_screen.dart';
 
 import '../../constants/contants.dart';
 import '../../models/concert_model.dart';
+import '../../models/model.dart';
 import '../../widgets/card_widget.dart';
 
 class NavHomeScreen extends StatefulWidget {
@@ -17,7 +18,20 @@ class NavHomeScreen extends StatefulWidget {
 
 class _NavHomeScreenState extends State<NavHomeScreen> {
   List<Concert> concerts = <Concert>[];
+  List<Concert> filteredConcerts = <Concert>[];
+
+  TextEditingController titleTextController = TextEditingController();
+  Filter filter = Filter();
+
   int page = 1;
+
+  _applyFilter(){
+    filteredConcerts = concerts.where((item) {
+      return (item.title != null && item.title!.toLowerCase().contains(filter.title.toLowerCase()));
+    }).toList();
+
+    setState(() {});
+  }
 
   _loadData({bool nextPage = false}) async {
     if (nextPage) {
@@ -27,6 +41,7 @@ class _NavHomeScreenState extends State<NavHomeScreen> {
     List<Concert>? loadedConcerts = await getConcertsData(page);
     if (loadedConcerts != null) {
       concerts.addAll(loadedConcerts);
+      filteredConcerts = concerts;
       setState(() {});
     }
   }
@@ -36,14 +51,16 @@ class _NavHomeScreenState extends State<NavHomeScreen> {
     //waits until the screen is built then call load data
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       _loadData();
+      titleTextController.addListener(() {
+        filter.title = titleTextController.text;
+        _applyFilter();
+      });
     });
     super.initState();
   }
 
   @override
-  void dispose() {
-    super.dispose();
-  }
+  void dispose() { super.dispose();}
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +82,7 @@ class _NavHomeScreenState extends State<NavHomeScreen> {
               margin: EdgeInsets.symmetric(horizontal: 10),
               color: kSecondaryColor,
               child: TextField(
-                controller: TextEditingController(),
+                controller: titleTextController,
                 style: TextStyle(
                     color: kPrimaryDarkenedColor, fontWeight: FontWeight.bold),
                 cursorColor: Colors.black,
@@ -136,7 +153,7 @@ class _NavHomeScreenState extends State<NavHomeScreen> {
                 : GridView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
-                    itemCount: concerts.length,
+                    itemCount: filteredConcerts.length,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
@@ -145,11 +162,11 @@ class _NavHomeScreenState extends State<NavHomeScreen> {
                             mainAxisExtent: 250),
                     itemBuilder: (BuildContext context, int index) =>
                         CardWidget(
-                      concert: concerts[index], function: (){ Navigator.push(
+                      concert: filteredConcerts[index], function: (){ Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                    ConcertScreen(concert : concerts[index])));},
+                                    ConcertScreen(concert : filteredConcerts[index])));},
                     ),
                   ),
           ],

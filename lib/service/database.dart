@@ -4,6 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import '../models/group_chats.dart';
 
+import '../models/user.dart';
+
 
 class DatabaseService{
 
@@ -16,13 +18,9 @@ class DatabaseService{
   FirebaseFirestore.instance.collection("groups");
 
   Future savingUserData(String name, String email) async {
+    UserModel user = UserModel(userName : name, email : email, groups: [] , uid: uid );
     return await userCollection.doc(uid)
-        .set({
-        'userName': name,
-        'email': email,
-        'groups': [],
-        'uid': uid,
-        });
+        .set( user.toMap());
   }
 
   Future getUserData(String email) async {
