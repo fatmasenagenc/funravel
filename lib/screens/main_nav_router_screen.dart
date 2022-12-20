@@ -5,6 +5,7 @@ import 'package:funravel_v0/constants/contants.dart';
 import 'package:funravel_v0/screens/location_screen.dart';
 import 'package:funravel_v0/screens/select_date_screen.dart';
 import 'package:funravel_v0/screens/nav_screens/nav_3_social.dart';
+import 'package:funravel_v0/screens/nav_screens/nav_1_savedplans.dart';
 import 'package:funravel_v0/screens/nav_screens/nav_4_groupschats.dart';
 import 'package:funravel_v0/screens/nav_screens/nav_5_profile.dart';
 
@@ -50,7 +51,7 @@ class _MainNavRouterScreenState extends State<MainNavRouterScreen> {
              child: PageView(
                  controller: _page_controller,
                  children: [
-                   Location(),
+                   NavSavedPlans(),
                    NavHomeScreen(),
                    NavSocial(),
                    NavGroupsChats(),
