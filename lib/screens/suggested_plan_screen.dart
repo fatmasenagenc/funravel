@@ -30,13 +30,10 @@ class _SuggestPlan extends State<SuggestPlan> {
 
       backgroundColor: kPrimaryColor,
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            // Go back to the previous screen
-          },
-        ),
-        title: Text("Suggest a Travel Plan"),
+        title: const Text('Suggest a Travel Plan', style: TextStyle(fontSize: 25,
+            //fontWeight: FontWeight.w800,
+            color: kPrimaryDarkenedColor)),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         // physics: NeverScrollableScrollPhysics(),
@@ -138,7 +135,7 @@ class _SuggestPlan extends State<SuggestPlan> {
                 dropdownColor: kSecondaryColor,
                 value: dropdownValue,
                 // Step 4.
-                items: <String>['Plane', 'Train', 'Bus']
+                items: <String>['Plane', 'Bus']
                     .map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
