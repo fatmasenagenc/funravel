@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../screens/create_group_invitation.dart';
 
+import 'package:funravel_v0/screens/suggested_plan_screen.dart';
 
 class ConcertScreen extends StatefulWidget {
   final Concert concert;
@@ -24,15 +25,15 @@ class _ConcertScreenState extends State<ConcertScreen> {
   void initState() {
     super.initState();
     sliverController.addListener(() {
-      if(sliverController.offset > 300 ){
-        if( appBarOpacity != 100){
-          setState((){
+      if (sliverController.offset > 300) {
+        if (appBarOpacity != 100) {
+          setState(() {
             appBarOpacity = 100;
           });
         }
-      }else{
-        if( appBarOpacity == 100){
-          setState((){
+      } else {
+        if (appBarOpacity == 100) {
+          setState(() {
             appBarOpacity = 0;
           });
         }
@@ -59,13 +60,15 @@ class _ConcertScreenState extends State<ConcertScreen> {
                 // onTap: (){ Navigator.pushAndRemoveUntil( context, MaterialPageRoute(builder: (context) => MainPage()), (_) => false); },
                 child: Icon(
                   Icons.arrow_circle_left_rounded,
-                  color:   appBarOpacity == 100 ? kPrimaryDarkenedColor : Colors.white,
+                  color: appBarOpacity == 100
+                      ? kPrimaryDarkenedColor
+                      : Colors.white,
                 )),
             pinned: true,
             title: AnimatedContainer(
               duration: Duration(milliseconds: 10000),
               child: Text(
-                appBarOpacity == 100 ? ( widget.concert.title ?? "" ) : "",
+                appBarOpacity == 100 ? (widget.concert.title ?? "") : "",
                 style: TextStyle(color: kPrimaryDarkenedColor),
               ),
             ),
@@ -78,7 +81,10 @@ class _ConcertScreenState extends State<ConcertScreen> {
                   Expanded(
                     child: Container(
                       color: kPrimaryColor,
-                      child: CardWidget( concert: widget.concert, function: (){},),
+                      child: CardWidget(
+                        concert: widget.concert,
+                        function: () {},
+                      ),
                     ),
                   ),
                 ],
@@ -87,45 +93,60 @@ class _ConcertScreenState extends State<ConcertScreen> {
           ),
           SliverToBoxAdapter(
             child: Column(
-
               children: [
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 buildCustomButton(
                     title: "Buy Tickets",
-                    function: ()async{
+                    function: () async {
                       print("opening the url ${widget.concert.url}");
-                      launchUrl( Uri.parse(widget.concert.url ?? ""));
+                      launchUrl(Uri.parse(widget.concert.url ?? ""));
 
                       // if(await canLaunchUrl( Uri.parse(widget.concert.url ?? ""))){
                       //   print("can open");
                       //   launchUrl( Uri.parse(widget.concert.url ?? ""));
                       // }
-                      },
-                    sideWidget: Icon(Icons.link, color: kPrimaryDarkenedColor,)),
-                SizedBox(height: 10,),
-                buildCustomButton(title: "Create Group Invitation",
-                  function: (){ return Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => CreateGroupInv()));}, ),
-
-                SizedBox(height: 20,),
-
-                buildCustomButton(title: "Suggest A Travel Plan", function: (){}, ),
-                SizedBox(height: 2000,),
-
+                    },
+                    sideWidget: Icon(
+                      Icons.link,
+                      color: kPrimaryDarkenedColor,
+                    )),
+                SizedBox(
+                  height: 10,
+                ),
+                buildCustomButton(
+                  title: "Create Group Invitation",
+                  function: () {
+                    return Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CreateGroupInv()));
+                  },
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                buildCustomButton(
+                  title: "Suggest A Travel Plan",
+                  function: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SuggestPlan()));
+                  },
+                ),
+                SizedBox(
+                  height: 2000,
+                ),
               ],
             ),
           )
         ],
       ),
-
     );
   }
 }
 
-
-buildCustomButton({ String? title, Function? function, Widget? sideWidget}){
+buildCustomButton({String? title, Function? function, Widget? sideWidget}) {
   return InkWell(
     onTap: () => function != null ? function() : null,
     child: Container(
@@ -135,15 +156,22 @@ buildCustomButton({ String? title, Function? function, Widget? sideWidget}){
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(title ?? "", style: TextStyle(color: kPrimaryDarkenedColor, fontSize: 15, fontWeight: FontWeight.bold), ),
-          SizedBox(width: 4,),
+          Text(
+            title ?? "",
+            style: TextStyle(
+                color: kPrimaryDarkenedColor,
+                fontSize: 15,
+                fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            width: 4,
+          ),
           sideWidget ?? Container()
         ],
       ),
     ),
   );
 }
-
 
 class MyBehavior extends ScrollBehavior {
   @override
