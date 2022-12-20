@@ -13,9 +13,9 @@ class DatabaseService{
   DatabaseService({this.uid});
 
   final CollectionReference userCollection =
-  FirebaseFirestore.instance.collection("Person");
+  FirebaseFirestore.instance.collection("User");
   final CollectionReference groupCollection =
-  FirebaseFirestore.instance.collection("groups");
+  FirebaseFirestore.instance.collection("GroupChats");
 
   Future savingUserData(String name, String email) async {
     UserModel user = UserModel(userName : name, email : email, groups: [] , uid: uid );
