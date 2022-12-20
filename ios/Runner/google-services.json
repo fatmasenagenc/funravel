@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "573898838208",
+    "project_id": "furnacel",
+    "storage_bucket": "furnacel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573898838208:android:7b55950c3795cc044c1d25",
+        "android_client_info": {
+          "package_name": "com.example.funravel_v0"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573898838208-8bpo67r7n1kcl6qtb38fsdvqmsigstsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvwSWasO1LM4HAw8Uyvo6PPNfzopMIFkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573898838208-8bpo67r7n1kcl6qtb38fsdvqmsigstsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

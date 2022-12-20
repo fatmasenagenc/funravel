@@ -7,7 +7,7 @@ import 'constants/app_theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(Funravel());
+  runApp( Funravel());
 }
 
 class Funravel extends StatelessWidget {
@@ -18,6 +18,7 @@ class Funravel extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: kDataThemeDark,
       themeMode: ThemeMode.dark,
+      // home: MainNavRouterScreen(),
       home: LoginPage(),
     );
   }

@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:funravel_v0/constants/contants.dart';
 import 'package:funravel_v0/models/concert_model.dart';
 import 'package:funravel_v0/widgets/card_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import '../screens/create_group_invitation.dart';
+
 
 class ConcertScreen extends StatefulWidget {
   final Concert concert;
@@ -87,7 +90,18 @@ class _ConcertScreenState extends State<ConcertScreen> {
 
               children: [
                 SizedBox(height: 20,),
-                buildCustomButton(title: "Buy Tickets", function: (){}, sideWidget: Icon(Icons.link, color: kPrimaryDarkenedColor,)),
+                buildCustomButton(
+                    title: "Buy Tickets",
+                    function: ()async{
+                      print("opening the url ${widget.concert.url}");
+                      launchUrl( Uri.parse(widget.concert.url ?? ""));
+
+                      // if(await canLaunchUrl( Uri.parse(widget.concert.url ?? ""))){
+                      //   print("can open");
+                      //   launchUrl( Uri.parse(widget.concert.url ?? ""));
+                      // }
+                      },
+                    sideWidget: Icon(Icons.link, color: kPrimaryDarkenedColor,)),
                 SizedBox(height: 10,),
                 buildCustomButton(title: "Create Group Invitation",
                   function: (){ return Navigator.push(

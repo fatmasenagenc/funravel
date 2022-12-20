@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:funravel_v0/models/user.dart';
 import 'package:funravel_v0/screens/create_review.dart';
 import 'package:funravel_v0/screens/login.dart';
 import 'package:funravel_v0/service/auth.dart';
@@ -27,11 +28,14 @@ class _NavProfileState extends State<NavProfile> {
         .then((snapshot) async{
             if (snapshot.exists){
               setState(() {
-                userName = snapshot.data()!["userName"];
+                UserModel user = UserModel.fromMap(snapshot.data()!);
+                userName = user.userName;
+                // userName = snapshot.data()!["userName"];
               });
             }
     });
   }
+
   @override
   void initState() {
     // TODO: implement initState
