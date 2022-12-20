@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-
 import '../constants/contants.dart';
 
 class CardWidget extends StatelessWidget {
