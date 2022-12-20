@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:funravel_v0/screens/main_nav_router_screen.dart';
 import '../../constants/contants.dart';
+import '../service/database.dart';
+import 'package:funravel_v0/service/auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import 'nav_screens/nav_4_groupschats.dart';
+import 'nav_screens/nav_5_profile.dart';
 
 class CreateGroupInv extends StatefulWidget {
   @override
@@ -7,6 +15,30 @@ class CreateGroupInv extends StatefulWidget {
 }
 
 class _CreateGroupInv extends State<CreateGroupInv> {
+  String groupName ="";
+  String explanation = "";
+  String userName = "";
+
+  Future _getDataFromDatabase() async
+  {
+    await FirebaseFirestore.instance.collection("Person")
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .get()
+        .then((snapshot) async{
+      if (snapshot.exists){
+        setState(() {
+          userName = snapshot.data()!["userName"];
+        });
+      }
+    });
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _getDataFromDatabase();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,8 +75,9 @@ class _CreateGroupInv extends State<CreateGroupInv> {
                       style: TextStyle(
                           color: kPrimaryDarkenedColor, fontWeight: FontWeight.bold),
                       cursorColor: Colors.black,
-                      onChanged: (input) {
-                        print("changed $input");
+                      onChanged: (groupN) {
+                        groupName = groupN;
+                        print("changed $groupN");
                       },
                       decoration: InputDecoration(
                           counterStyle: TextStyle(color: Colors.black,
@@ -91,8 +124,9 @@ class _CreateGroupInv extends State<CreateGroupInv> {
                       style: TextStyle(
                           color: kPrimaryDarkenedColor, fontWeight: FontWeight.bold),
                       cursorColor: Colors.black,
-                      onChanged: (input) {
-                        print("changed $input");
+                      onChanged: (exp) {
+                        explanation = exp;
+                        print("changed $exp");
                       },
                       decoration: InputDecoration(
                           counterStyle: TextStyle(color: Colors.black,
@@ -128,8 +162,22 @@ class _CreateGroupInv extends State<CreateGroupInv> {
               fixedSize: const Size(200, 50),
               //padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
             ),
-            onPressed: () =>
-            {}, child: Text('Create',
+              onPressed: () async {
+                if (groupName != "") {
+                  DatabaseService(
+                      uid: FirebaseAuth.instance.currentUser!.uid)
+                      .createGroup(userName,
+                      FirebaseAuth.instance.currentUser!.uid, groupName,
+                      explanation);
+                }
+                Navigator.of(context).pushAndRemoveUntil
+                (MaterialPageRoute
+
+                (builder: (context) => MainNavRouterScreen()), (
+                 route) => false);
+              }
+              ,
+            child: Text('Create',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: kPrimaryDarkenedColor)),
           ),
 
@@ -140,7 +188,4 @@ class _CreateGroupInv extends State<CreateGroupInv> {
     );
   }
 
-  groupList(){
-
-  }
 }
