@@ -23,14 +23,22 @@ class DatabaseService{
         .set( user.toMap());
   }
 
-  Future getUserData(String email) async {
-    QuerySnapshot snapshot =
-    await userCollection.where("email", isEqualTo: email).get();
-    return snapshot;
-  }
-
-
   Future createGroup(String userName, String id, String groupName,String explanation) async {
+    GroupChats groupChats = GroupChats(
+      groupName: groupName,
+      concert: [],
+      groupIcon: "",
+      admin: "${id}_$userName",
+      members: [],
+      groupID: "",
+      recentMessage: "",
+      recentMessageSender: "",
+      explanation: explanation,
+
+    );
+  //return await groupCollection.doc(uid)
+    //.set( groupChats.toMap());
+    
     DocumentReference groupDocumentReference = await groupCollection.add({
       "groupName": groupName,
       "concert": [], //get from api
@@ -41,7 +49,11 @@ class DatabaseService{
       "recentMessage": "",
       "recentMessageSender": "",
       "explanation": explanation,
+
     });
+
+
+
     // update the members
     await groupDocumentReference.update({
       "members": FieldValue.arrayUnion(["${uid}_$userName"]),
@@ -54,6 +66,15 @@ class DatabaseService{
     });
 
   }
+
+  Future getUserData(String email) async {
+    QuerySnapshot snapshot =
+    await userCollection.where("email", isEqualTo: email).get();
+    return snapshot;
+  }
+
+
+
 
   getUserGroups() async{
     return userCollection.doc(uid).snapshots;
