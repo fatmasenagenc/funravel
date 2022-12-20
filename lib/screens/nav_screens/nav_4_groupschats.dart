@@ -40,10 +40,10 @@ class _NavGroupsChatsState extends State<NavGroupsChats> {
         setState(() {
           userName = snapshot.data()!["userName"];
           groups = snapshot.data()!["groups"];
+          print(groups.length);
         });
       }
     });
-
   }
 
 
@@ -71,7 +71,6 @@ class _NavGroupsChatsState extends State<NavGroupsChats> {
   }
 
   printView() {
-
       return ListView.builder(
         itemCount: groups.length,
         itemBuilder: (context, index) {

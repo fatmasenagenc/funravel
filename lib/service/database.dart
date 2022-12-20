@@ -36,22 +36,12 @@ class DatabaseService{
       explanation: explanation,
 
     );
-  //return await groupCollection.doc(uid)
-    //.set( groupChats.toMap());
-    
-    DocumentReference groupDocumentReference = await groupCollection.add({
-      "groupName": groupName,
-      "concert": [], //get from api
-      "groupIcon": "", //get from api
-      "admin": "${id}_$userName",
-      "members": [],
-      "groupId": "",
-      "recentMessage": "",
-      "recentMessageSender": "",
-      "explanation": explanation,
 
-    });
+  // return await groupCollection.doc(uid)
+  //   .set( groupChats.toMap());
 
+    DocumentReference groupDocumentReference = await groupCollection.add(
+        groupChats.toMap());
 
 
     // update the members
@@ -59,10 +49,13 @@ class DatabaseService{
       "members": FieldValue.arrayUnion(["${uid}_$userName"]),
       "groupId": groupDocumentReference.id,
     });
+
+    // groupChats.members = ["${uid}_$userName"];
+    // groupChats.groupID = groupDocumentReference.id;
+
     DocumentReference userDocumentReference = userCollection.doc(uid);
     return await userDocumentReference.update({
-      "groups":
-      FieldValue.arrayUnion(["${groupDocumentReference.id}_$groupName"])
+      "groups": FieldValue.arrayUnion(["${groupDocumentReference.id}_$groupName"])
     });
 
   }
@@ -72,8 +65,6 @@ class DatabaseService{
     await userCollection.where("email", isEqualTo: email).get();
     return snapshot;
   }
-
-
 
 
   getUserGroups() async{

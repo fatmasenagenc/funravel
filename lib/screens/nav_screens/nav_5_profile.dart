@@ -22,7 +22,7 @@ class _NavProfileState extends State<NavProfile> {
 
   Future _getDataFromDatabase() async
   {
-    await FirebaseFirestore.instance.collection("Person")
+    await FirebaseFirestore.instance.collection("User")
         .doc(FirebaseAuth.instance.currentUser!.uid)
         .get()
         .then((snapshot) async{

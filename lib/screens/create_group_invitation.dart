@@ -21,7 +21,7 @@ class _CreateGroupInv extends State<CreateGroupInv> {
 
   Future _getDataFromDatabase() async
   {
-    await FirebaseFirestore.instance.collection("Person")
+    await FirebaseFirestore.instance.collection("User")
         .doc(FirebaseAuth.instance.currentUser!.uid)
         .get()
         .then((snapshot) async{
