@@ -64,6 +64,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.16.0"
+  csc_picker:
+    dependency: "direct main"
+    description:
+      name: csc_picker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.6"
   cupertino_icons:
     dependency: "direct main"
     description:
