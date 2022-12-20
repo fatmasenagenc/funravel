@@ -15,8 +15,11 @@ class _NavSavedPlansState extends State<NavSavedPlans> {
     return Scaffold(
 
       backgroundColor: kPrimaryColor,
-      appBar: AppBar(
-        title: Text("Saved Travel Plans"),
+        appBar: AppBar(
+        title: const Text('Saved Travel Plans', style: TextStyle(fontSize: 25,
+        //fontWeight: FontWeight.w800,
+        color: kPrimaryDarkenedColor)),
+      centerTitle: true,
       ),
       body: SingleChildScrollView(
         // physics: NeverScrollableScrollPhysics(),

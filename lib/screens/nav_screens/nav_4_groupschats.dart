@@ -60,7 +60,7 @@ class _NavGroupsChatsState extends State<NavGroupsChats> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Group Chats', style: TextStyle(fontSize: 25,
-              fontWeight: FontWeight.w800,
+              //fontWeight: FontWeight.w800,
               color: kPrimaryDarkenedColor)),
           centerTitle: true,
         ),

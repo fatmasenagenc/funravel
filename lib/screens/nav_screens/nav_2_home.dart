@@ -136,6 +136,9 @@ class _NavHomeScreenState extends State<NavHomeScreen> {
                 ],
               ),
             ),
+            SizedBox(
+              height: 15,
+            ),
             concerts.isEmpty
                 ? Column(
                     children: const [
