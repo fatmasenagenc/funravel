@@ -112,6 +112,22 @@ class _SuggestPlan extends State<SuggestPlan> {
               height: 20,
             ),
             Container(
+              child: Row(
+                children:[
+                  Text('Transportation',style: TextStyle(
+                    color: kSecondaryColor,
+                    fontSize:18,
+                    fontWeight: FontWeight.bold,
+
+                  ),),
+
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
               width: double.infinity,
               padding: EdgeInsets.only(right: 20, left: 10),
               margin: EdgeInsets.symmetric(horizontal: 10),
@@ -145,18 +161,232 @@ class _SuggestPlan extends State<SuggestPlan> {
 
 
             ),
+            SizedBox(
+              height: 15,
+            ),Container(
+              child: Row(
+                children:[
+                  Text('Travel Preference',style: TextStyle(
+                    color: kSecondaryColor,
+                    fontSize:18,
+                    fontWeight: FontWeight.bold,
+
+                  ),),
+
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              child: Row(
+                children:[
+                  Container(
+                    width:160,
+                    height:40,
+                    child:
+                    ElevatedButton(
+
+                      style: ButtonStyle(
+
+                        backgroundColor: MaterialStatePropertyAll<Color>(
+                            kSecondaryColor),
+
+
+
+                      ),
+                      child: Text('Best Price',style: TextStyle(
+                        color: kPrimaryColor,
+
+                      ),),
+
+
+                      onPressed: () {},
+                    ),
+
+
+
+
+                  ),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  Container(
+                    width:181,
+                    height:44,
+                    child:
+                    ElevatedButton(
+
+                      style: ButtonStyle(
+
+                        backgroundColor: MaterialStatePropertyAll<Color>(
+                            kSecondaryColor),
+
+
+
+                      ),
+                      child: Text('Shortest Travel Time',style: TextStyle(
+                        color: kPrimaryColor,
+
+
+                      ),),
+
+
+                      onPressed: () {},
+                    ),
+
+
+
+
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
             Container(
 
-              child: ElevatedButton(
+              child: Row(
+                children:[
+                  Container(
+                    height:40,
+                    width:160,
+
+                    child:
+                    ElevatedButton(
+
+                      style: ButtonStyle(
+
+                          backgroundColor: MaterialStatePropertyAll<Color>(
+                              kSecondaryColor),
+                          padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.fromLTRB(50, 0, 10, 0))
+
+
+                      ),
+                      child: Text('Minimum Transfers',style: TextStyle(
+                        color: kPrimaryColor,
+
+                      ),),
+
+
+                      onPressed: () {},
+                    ),
+
+
+
+
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              child: Row(
+                children:[
+                  Text('Hotel Preference',style: TextStyle(
+                    color: kSecondaryColor,
+                    fontSize:18,
+                    fontWeight: FontWeight.bold,
+
+                  ),),
+
+                ],
+              ),
+            ),
+
+            SizedBox(
+              height: 10,
+            ),
+
+            Container(
+              child: Row(
+                children:[
+                  Container(
+                    width:160,
+                    height:34,
+                    child:
+                    ElevatedButton(
+
+                      style: ButtonStyle(
+
+                        backgroundColor: MaterialStatePropertyAll<Color>(
+                            kSecondaryColor),
+
+
+
+                      ),
+                      child: Text('Best Price',style: TextStyle(
+                        color: kPrimaryColor,
+
+                      ),),
+
+
+                      onPressed: () {},
+                    ),
+
+
+
+
+                  ),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  Container(
+                    width:181,
+                    height:34,
+                    child:
+                    ElevatedButton(
+
+                      style: ButtonStyle(
+
+                        backgroundColor: MaterialStatePropertyAll<Color>(
+                            kSecondaryColor),
+
+
+
+                      ),
+                      child: Text('Close to Venue',style: TextStyle(
+                        color: kPrimaryColor,
+
+
+                      ),),
+
+
+                      onPressed: () {},
+                    ),
+
+
+
+
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              width:140,
+              height:54,
+              child:
+              ElevatedButton(
+
                 style: ButtonStyle(
 
-                    backgroundColor: MaterialStatePropertyAll<Color>(
-                        kSecondaryColor),
-                    padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.fromLTRB(10, 10, 10, 10))
+                  backgroundColor: MaterialStatePropertyAll<Color>(
+                      kSecondaryColor),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      side: BorderSide(width: 3, color: Colors.black),
+                    ),
 
-
+                  ),
                 ),
-                child: Text('Best Price',style: TextStyle(
+                child: Text('Make Package',style: TextStyle(
                   color: kPrimaryColor,
 
                 ),),
@@ -165,24 +395,14 @@ class _SuggestPlan extends State<SuggestPlan> {
                 onPressed: () {},
               ),
 
+
+
+
             ),
-            ElevatedButton(
-              style: ButtonStyle(
+            SizedBox(
+              height: 30,
+            ),
 
-                  backgroundColor: MaterialStatePropertyAll<Color>(
-                      kSecondaryColor),
-                  padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.fromLTRB(10, 10, 10, 10))
-
-
-              ),
-              child: Text('Minimum Transfers',style: TextStyle(
-                color: kPrimaryColor,
-
-              ),),
-
-
-              onPressed: () {},
-            )
           ],
         ),
       ),
